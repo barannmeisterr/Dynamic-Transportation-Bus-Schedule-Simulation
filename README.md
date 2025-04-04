@@ -80,6 +80,7 @@ The main structure representing the bus transportation system:
 - Stack Singly Linked List Implementation
 - BFS Traversal
 - HashSet
+- Priority Queue
 
 
 ## 🚀 Usage
