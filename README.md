@@ -5,6 +5,7 @@ You can only travel in one bus at a time, but you can use multiple buses to reac
 In the input, the first line contains 2 space separated integers, N, M. N denotes the number of stations, M denotes the number of buses respectively. Each of the next M lines contain an integer t followed by t integers which demonstrate the schedule of each bus.
 In the given sample input, it is given that we have 8 stations, and 4 buses work between them in the first line. The next lines give the schedule of each bus with the number of stations it visits and which stations it visits. For example, the second bus has 3 stations 6, 1 and 2. Buses visit the stations according to the given order, so the second bus is in the 6th station at the beginning, then it goes to the 1st station and then 2nd station and returns to the 6th station. And, traveling between each station takes 1 minute, so it takes 2 minute for the second bus to go from 6th station to 2nd station.
 In the output, print N-1 space separated integers denoting the minimum amount of time needed to reach each station except the 1st station because you are at the first station at the beginning. If any of the stations is not reachable with the given schedule of the buses, you need to print -1 for that station. You need to print the output in numerical order which means you need to give the amount of time for 2nd station first, then 3rd, then 4th and goes on.
+
 Sample Input:
 - 8 4
 - 2 5 4
