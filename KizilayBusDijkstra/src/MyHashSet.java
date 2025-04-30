@@ -1,4 +1,6 @@
 // Author: Arda Baran
+//Class:MyHashSet
+//Description:this class implements generic HashSet Data Structure.it is used to initialize stations from a txt file.
 import java.util.ArrayList;
 
 public class MyHashSet<T> {
