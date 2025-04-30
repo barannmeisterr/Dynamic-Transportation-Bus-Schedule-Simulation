@@ -1,4 +1,6 @@
 // Author: Arda Baran
+//Class:FileHelper
+//Description:this class helps to find unique stations from a txt file.
 import java.io.*;
 import java.util.*;
 
