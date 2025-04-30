@@ -1,4 +1,7 @@
 // Author: Arda Baran
+//Class:Station 
+//Description:This class defines a station structure on the dynamic transportation system.A station consists of unique station id,the list of lines that 
+//comes to this station,the waiting time for bus so that passenger can get on the bus from this statin , the indegree,the outdegree etc.
 import java.util.*;
 public class Station {
 int waitingTime;
@@ -91,6 +94,10 @@ if(line==null) {
 this.lines.add(line);
 }
 public int findWaitingTimeForLine(Line line,int shortestKnownDistance) {
+	//----------------------------------------------------------------------------
+	//Summary:Finds the waiting time for a line by using math operations and boolean algebra.
+	//-------------------------------------------------------------------------------
+	
 	int totalNumberOfStationsInTheRoute=line.getNumOfStations();
 	int stationIndexInTheRoute=line.getIndexOfTheStationOnTheRoute(getStationID());
 	int totalWastedTime=shortestKnownDistance;
