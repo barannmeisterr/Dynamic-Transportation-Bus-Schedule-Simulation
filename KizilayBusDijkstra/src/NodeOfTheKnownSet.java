@@ -1,4 +1,7 @@
 // Author: Arda Baran
+//Class:NodeOfTheKnownSet
+// Description: This class defines the node of the mixed singly linked list and stack data structure.
+
 public class NodeOfTheKnownSet {
 	Station station;
 	NodeOfTheKnownSet next;
