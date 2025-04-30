@@ -1,4 +1,8 @@
 // Author: Arda Baran
+//Class:KnownStationSet
+// Description: This class implements Mixed Singly Linked List and Stack data structure.
+//in order to add station which distances is absouletly known and get the last added station.
+//------------------------------------------------------------------
 public class KnownStationSet {
 
 	NodeOfTheKnownSet root;
