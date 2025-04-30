@@ -1,4 +1,7 @@
 // Author: Arda Baran
+//Class:Line
+//Description:This class describes Line structure of transportation system.A line consists of unique line id, the number of stations that line serve and the stations on the line.
+
 import java.util.*;
 public class Line {
 
