@@ -1,4 +1,6 @@
 // Author: Arda Baran
+//Class:Directed Graph
+//Description:this class defines Directed Graph Data Structure.
 
 import java.util.*;
 
