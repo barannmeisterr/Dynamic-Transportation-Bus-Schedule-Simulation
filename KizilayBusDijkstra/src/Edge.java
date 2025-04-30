@@ -1,4 +1,7 @@
 // Author: Arda Baran
+//Class:Edge
+//Description:This class defines the directed edge structure between two stations.An edge on the graph consists of ID of a line that connects two stations,
+//From station, To station and link cost as weight.
 public class Edge {
 int lineId;
 Station from , to;
