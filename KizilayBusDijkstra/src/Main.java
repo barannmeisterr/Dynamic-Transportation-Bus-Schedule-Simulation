@@ -1,4 +1,6 @@
 // Author: Arda Baran
+//Class:Main
+//Description:this class runs the simulation.
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
