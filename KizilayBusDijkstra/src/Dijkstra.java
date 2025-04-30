@@ -1,4 +1,6 @@
 // Author: Arda Baran
+//Class:Dijkstra
+//Description:This class performs dijkstra algorithm on Directed Graph Data Structure
 import java.util.*;
 public class Dijkstra {
 DirectedGraph graph;
@@ -12,35 +14,26 @@ public Dijkstra(DirectedGraph graph) {
     	this.shortestDistances.put(stations, Integer.MAX_VALUE);
     }
 }
-
-
-
+	
 public KnownStationSet getSetOfVisitedStations() {
 	return setOfVisitedStations;
 }
-
-
 
 public void setSetOfVisitedStations(KnownStationSet setOfVisitedStations) {
 	this.setOfVisitedStations = setOfVisitedStations;
 }
 
-
-
 public HashMap<Station, Integer> getShortestDistances() {
 	return shortestDistances;
 }
-
 
 public void setShortestDistances(HashMap<Station, Integer> shortestDistances) {
 	this.shortestDistances = shortestDistances;
 }
 
-
 public DirectedGraph getGraph() {
 	return graph;
 }
-
 
 public void setGraph(DirectedGraph graph) {
 	this.graph = graph;
@@ -49,11 +42,15 @@ public void setGraph(DirectedGraph graph) {
 public int getShortestDistanceToStation(Station station) {
 	return getShortestDistances().get(station);
 }
-
+	
 public void changeShortestDistanceOfStation(Station station,int newDistance) {
 	this.shortestDistances.replace(station, newDistance);
 }
 public int FindLineIdBetweenTwoConnectedStations(Station from,Station to) {
+	//----------------------------------------------------------------------------
+	//Summary:if from station and to station are connected directly,finds the id of the line that connects these two stations.
+	//-------------------------------------------------------------------------------
+	
 	  for (Edge edge : getGraph().getAdjList().get(from)) { 
 	        if (edge.getTo() == to) {
 	            return edge.getLineId();
@@ -63,6 +60,9 @@ public int FindLineIdBetweenTwoConnectedStations(Station from,Station to) {
 }
 
 public int getLinkCost(Station from, Station to) {
+	//----------------------------------------------------------------------------
+	//Summary:finds the link cost between two stations.
+	//-------------------------------------------------------------------------------	
     for (Edge edge : getGraph().getAdjList().get(from)) { 
         if (edge.getTo() == to) {
             return edge.getWeight();
@@ -71,13 +71,20 @@ public int getLinkCost(Station from, Station to) {
     return -1; 
 }
 public int getTotalCost(Station from,Station to) {
-
+	//----------------------------------------------------------------------------
+	//Summary:finds the total cost between two stations.
+	//the total cost = the time passed to arrive from station + waiting time for line is available for from station in order to departure + direct link cost between from and to stations.
+	//-------------------------------------------------------------------------------
 int lineIdThatConnectsFromAndTo=FindLineIdBetweenTwoConnectedStations(from,to);
 int waitTimeForLineToMove=from.findWaitingTimeForLine(getGraph().getLineById(lineIdThatConnectsFromAndTo),getShortestDistanceToStation(from));
 return getShortestDistanceToStation(from) + waitTimeForLineToMove + getLinkCost(from,to);
 	 	
 }
 public void updateShortestDistance(Station currentStation,Station neighborOfCurrentStation) {
+	//----------------------------------------------------------------------------
+	//Summary:updates shortest distance if the new found distance less than the current distance.
+	//-------------------------------------------------------------------------------
+	
 	int updatedShortestDistance = getTotalCost(currentStation,neighborOfCurrentStation);
 	if(updatedShortestDistance < getShortestDistanceToStation(neighborOfCurrentStation)) {
 		changeShortestDistanceOfStation(neighborOfCurrentStation,updatedShortestDistance);
@@ -85,6 +92,10 @@ public void updateShortestDistance(Station currentStation,Station neighborOfCurr
 }
 
 public List<Station> getNeighborsOfStation(Station station) {
+	//----------------------------------------------------------------------------
+	//Summary:Finds neigbors of station.
+	//-------------------------------------------------------------------------------
+	
 	List<Edge> edges = getGraph().getNeighbors(getGraph().getStation(station));
 	List<Station> neighbors=new ArrayList<>();
 	for (Edge edge : edges) {
@@ -94,18 +105,23 @@ public List<Station> getNeighborsOfStation(Station station) {
 	return neighbors;
 }
 public List<Station> getUnreachableStationsFromStartStation(Station startStation) {
-    List<Station> unreachableStations = new ArrayList<>();
+  	//----------------------------------------------------------------------------
+	//Summary:finds unreachable station by using BFS Algorithm from start station.
+	//-------------------------------------------------------------------------------
+	
+	
+   List<Station> unreachableStations = new ArrayList<>();
     Set<Station> visited = new HashSet<>();
     Queue<Station> queue = new LinkedList<>();
 
-    // BFS Traversal Başlat
+    // starts BFS Traversal
     queue.add(startStation);
     visited.add(startStation);
 
     while (!queue.isEmpty()) {
         Station current = queue.poll();
 
-        // Komşuları sıraya ekle
+        // adds neighbors to queue
         for (Station neighbor : getNeighborsOfStation(current)) {
             if (!visited.contains(neighbor)) {
                 visited.add(neighbor);
