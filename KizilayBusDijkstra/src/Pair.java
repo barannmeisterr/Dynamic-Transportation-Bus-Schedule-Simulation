@@ -1,4 +1,6 @@
 // Author: Arda Baran
+//Class:Pair
+//Description:this class used to determine connected stations from input.
 public class Pair {
 Station from,to;
 public Pair(Station from,Station to) {
