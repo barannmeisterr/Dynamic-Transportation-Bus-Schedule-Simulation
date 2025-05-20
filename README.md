@@ -1,4 +1,4 @@
-# 🚇 Dynamic Transportation Bus Schedule Simulation
+#  Dynamic Transportation Bus Schedule Simulation
 
 There are N bus stations and M buses provide service in Ankara Kızılay. Each bus s has a schedule consisting of t stations. At the beginning, each bus at their first station and each minute it travels to the next station. When it reaches the end, it goes back to the beginning and starts again. At the beginning, you are at station 1. If at any moment you and a bus are at the same station, you can get on it and travel with it. You can get off the bus at any station. The same station can appear multiple times in the itinerary of the bus, but not adjacent to each other (in particular the last station is adjacent to the first one). You are interested in finding the minimum amount of time you need to reach to each station, or state that it is impossible.
 You can only travel in one bus at a time, but you can use multiple buses to reach your destination. Do not forget that you can only travel by bus. There can be multiple buses at the same station at the same time. Getting on and off a bus is instantaneous.
@@ -26,15 +26,15 @@ Sample Output:
 
 - Arda Baran
 
-## 🔧 Features
-- ✅ Directed graph representation of bus transportation systems
-- ✅ Dynamic station wait time and line-switching support
-- ✅ Edge weights and traversal simulation
-- ✅ In-degree and out-degree calculation for each station
-- ✅ Line assignment and station relationship mapping
-- ✅ Extendable for real-time simulation and shortest-path logic with unique Dijkstra algorithm implementation
+##  Features
+-  Directed graph representation of bus transportation systems
+-  Dynamic station wait time and line-switching support
+-  Edge weights and traversal simulation
+-  In-degree and out-degree calculation for each station
+-  Line assignment and station relationship mapping
+-  Extendable for real-time simulation and shortest-path logic with unique Dijkstra algorithm implementation
 
-## 🧱 Core Components
+##  Core Components
 
 ### `Station`
 Represents a node in the graph:
@@ -83,7 +83,7 @@ The main structure representing the bus transportation system:
 - Priority Queue
 
 
-## 🚀 Usage
+##  Usage
 
 You can use this project to:
 - Simulate real bus transportation systems
@@ -91,6 +91,6 @@ You can use this project to:
 - Build the base for shortest path / trip planning algorithms
 - Create dynamic animations of bus flows
 
-## 📁 File Structure 
+##  File Structure 
 - src/: Contains the Java source code
 - src/resources: Contains txt files
